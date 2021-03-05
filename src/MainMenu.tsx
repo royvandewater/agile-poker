@@ -4,6 +4,8 @@ import Chance from 'chance'
 import dashify from 'dashify'
 import * as R from 'ramda'
 
+import './MainMenu.css';
+
 const randomAnimal = () => dashify(new Chance().animal())
 
 const HostSessionOption = () => {
@@ -31,7 +33,7 @@ const JoinSessionOption = () => {
 
         <form onSubmit={() => history.push(`join-session/${sessionId}`)}>
           <label>
-            Code
+            Session ID
             <input onChange={event => setSessionId(event.target.value)} value={sessionId} />
           </label>
           {R.isEmpty(sessionId)
@@ -47,10 +49,10 @@ const MainMenu = () => (
   <div className="MainMenu">
     <h1>Agile Poker</h1>
 
-    <div className="Options">
+    <main className="Options">
       <HostSessionOption />
       <JoinSessionOption />
-    </div>
+    </main>
   </div>
 )
 

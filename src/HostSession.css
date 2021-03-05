@@ -1,0 +1,59 @@
+
+.HostSession {
+  background-color: #420039;
+  color: #fff;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.HostSession a {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.HostSession .InviteVoter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 12px;
+
+  background-color: #12355b;
+}
+
+.HostSession .InviteVoter > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.HostSession .InviteVoter dt,
+.HostSession .InviteVoter dd {
+  margin-left: 12px;
+  font-weight: bold;
+}
+
+/* label {
+  display: flex;
+  font-size: 1.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+label > input {
+  margin-left: 12px;
+  font-size: 1.5em;
+} */
+
+/*
+ * https://coolors.co/12355b-420039-d72638-ffffff-ff570a
+--prussian-blue: #12355b;
+--russian-violet: #420039;
+--amaranth-red: #d72638;
+--white: #ffffff;
+--orange-pantone: #ff570a;
+*/

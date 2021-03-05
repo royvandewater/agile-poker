@@ -1,8 +1,9 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import * as R from 'ramda'
 import UUID from 'uuid'
 
+import './HostSession.css';
 import useHostSession from './hooks/useHostSession'
 
 interface Story {
@@ -34,13 +35,19 @@ const HostSession = () => {
 
 
   return (
-    <div>
+    <div className="HostSession">
       <h1>Host Session</h1>
 
-      <p>
-        Have everyone go to <a href={signupUrl}>{signupUrl}</a> and join session
-        using the id <strong>{sessionId}</strong> or go straight to <a href={joinUrl}>{joinUrl}</a>
-      </p>
+      <dl className="InviteVoter">
+        <div>
+          <dt>Session ID:</dt>
+          <dd>{sessionId}</dd>
+        </div>
+        <div>
+          <dt>Link:</dt>
+          <dd><Link to={joinUrl}>Join</Link></dd>
+        </div>
+      </dl>
 
       <section>
         <h3>Options</h3>

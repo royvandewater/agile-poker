@@ -63,11 +63,9 @@ button.card.selected {
 
 .MainMenu > h1 {
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
+  width: calc(100vw - 12px);
+
   left: 12px;
-  right: 0;
-  bottom: 0;
   top: 0;
   text-align: center;
   font-size: 72px;

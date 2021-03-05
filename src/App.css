@@ -10,10 +10,8 @@
 */
 
 html, body, #root {
-  min-height: 100%;
-  width: 100%;
-  background-color: #420039;
-  color: #ffffff;
+  min-height: 100vh;
+  width: 100vw;
 }
 
 a {
@@ -56,37 +54,40 @@ button.card.selected {
 
 .MainMenu {
   width: 100%;
-  min-height: 100%;
-  display: grid;
-  grid-template-columns: auto 360px 80px 80px 360px auto;
-  row-gap: 16px;
-}
-
-@media(max-width: 960px) {
-  .MainMenu {
-    grid-template-columns: 100%;
-    row-gap: 16px;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #420039;
+  color: #fff
 }
 
 .MainMenu > h1 {
-  grid-column: 1 / span 5;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 12px;
+  right: 0;
+  bottom: 0;
+  top: 0;
   text-align: center;
-  font-size: 48px;
-}
-
-.MainMenu .HostSessionOption {
-  grid-column: 2;
-}
-.MainMenu .JoinSessionOption {
-  grid-column: 5;
+  font-size: 72px;
 }
 
 @media(max-width: 960px) {
-  .MainMenu > h1,
-  .MainMenu .HostSessionOption,
-  .MainMenu .JoinSessionOption {
-    grid-column: 1;
+  .MainMenu > h1 {
+    position: static;
+  }
+}
+
+.MainMenu .Options {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+@media(max-width: 960px) {
+  .MainMenu .Options {
+    flex-direction: column;
   }
 
   .MainMenu .HostSessionOption {
@@ -101,10 +102,29 @@ button.card.selected {
 
 .MainMenu .HostSessionOption,
 .MainMenu .JoinSessionOption {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MainMenu .HostSessionOption {
+  background-color: #420039;
+  color: #fff;
+}
+
+.MainMenu .JoinSessionOption {
+  background-color: #12355b;
+  color: #fff;
+}
+
+.MainMenu .HostSessionOption > div,
+.MainMenu .JoinSessionOption > div {
   display: flex;
   flex-direction: column;
 
   text-align: center;
+  margin-bottom: 36px;
 }
 
 .MainMenu .HostSessionOption h2,
@@ -131,7 +151,6 @@ button.card.selected {
 }
 
 .MainMenu .HostSessionOption a {
-  margin-top: 3.75em;
   margin-top: 180px;
 }
 @media(max-width: 960px) {
@@ -151,6 +170,7 @@ button.card.selected {
   display: flex;
   flex-direction: column;
 }
+
 .MainMenu .JoinSessionOption form label input {
   margin-top: 12px;
 

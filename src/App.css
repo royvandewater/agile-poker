@@ -9,7 +9,9 @@
 --orange-pantone: #ff570a;
 */
 
-html, body {
+html, body, #root {
+  min-height: 100%;
+  width: 100%;
   background-color: #420039;
   color: #ffffff;
 }
@@ -19,11 +21,7 @@ a {
   font-weight: bold;
 }
 
-.App {
-  text-align: center;
-}
-
-label {
+/* label {
   display: flex;
   font-size: 1.5em;
   align-items: center;
@@ -33,7 +31,7 @@ label {
 label > input {
   margin-left: 12px;
   font-size: 1.5em;
-}
+} */
 
 button.card {
   background-color: #fff;
@@ -54,4 +52,114 @@ button.card:hover {
 button.card.selected {
   background-color: #ff570a;
   color: white;
+}
+
+.MainMenu {
+  width: 100%;
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: auto 360px 80px 80px 360px auto;
+  row-gap: 16px;
+}
+
+@media(max-width: 960px) {
+  .MainMenu {
+    grid-template-columns: 100%;
+    row-gap: 16px;
+  }
+}
+
+.MainMenu > h1 {
+  grid-column: 1 / span 5;
+  text-align: center;
+  font-size: 48px;
+}
+
+.MainMenu .HostSessionOption {
+  grid-column: 2;
+}
+.MainMenu .JoinSessionOption {
+  grid-column: 5;
+}
+
+@media(max-width: 960px) {
+  .MainMenu > h1,
+  .MainMenu .HostSessionOption,
+  .MainMenu .JoinSessionOption {
+    grid-column: 1;
+  }
+
+  .MainMenu .HostSessionOption {
+    padding-bottom: 36px;
+  }
+
+  .MainMenu .JoinSessionOption {
+    padding-top: 36px;
+    padding-bottom: 64px;
+  }
+}
+
+.MainMenu .HostSessionOption,
+.MainMenu .JoinSessionOption {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.MainMenu .HostSessionOption h2,
+.MainMenu .JoinSessionOption h2 {
+  font-size: 32px;
+}
+
+.MainMenu .HostSessionOption a,
+.MainMenu .JoinSessionOption a,
+.MainMenu .JoinSessionOption button {
+  background-color: #fff;
+  color: black;
+  border: 0;
+  border-radius: 16px;
+  font-size: 48px;
+  font-weight: bold;
+  padding: 48px;
+  text-decoration: none;
+}
+
+.MainMenu .HostSessionOption a:hover,
+.MainMenu .JoinSessionOption a:hover {
+  background-color: #ddd;
+}
+
+.MainMenu .HostSessionOption a {
+  margin-top: 3.75em;
+  margin-top: 180px;
+}
+@media(max-width: 960px) {
+  .MainMenu .HostSessionOption a {
+    margin-top: 0;
+  }
+}
+
+.MainMenu .JoinSessionOption form {
+  display: flex;
+  flex-direction: column;
+}
+
+.MainMenu .JoinSessionOption form label {
+  font-size: 32px;
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+}
+.MainMenu .JoinSessionOption form label input {
+  margin-top: 12px;
+
+  border-radius: 16px;
+  padding: 4px;
+  font-size: 48px;
+  text-align: center;
+}
+
+.MainMenu .JoinSessionOption button:disabled {
+  opacity: 0.5;
 }
